@@ -1,0 +1,16 @@
+<div>
+    <button (click)="handleAddApple()">Add an apple on the basket</button>
+
+    <div *ngIf="apples.length !== 0">
+        <hr />
+        <p [style.color]="'red'">Clickez sur la pomme pour la supprimer</p>
+        <ul>
+            <li *ngFor="let apple of apples">
+                <app-apple 
+                    [apple]="apple" 
+                    (deleteApple)="handleDeleteApple($event)">
+                </app-apple>
+            </li>
+        </ul>
+    </div>
+</div>
